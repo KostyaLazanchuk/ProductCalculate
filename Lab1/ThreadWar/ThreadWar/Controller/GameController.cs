@@ -21,12 +21,12 @@ namespace ThreadWar.Controller
 
         public void Run()
         {
-            var starter = new Thread(() => 
-            { 
-                if (!_gameState.StartEvent.Wait(TimeSpan.FromSeconds(15))) _gameState.StartEvent.Set(); 
-            }) 
-            { 
-                IsBackground = true 
+            var starter = new Thread(() =>
+            {
+                if (!_gameState.StartEvent.Wait(TimeSpan.FromSeconds(15))) _gameState.StartEvent.Set();
+            })
+            {
+                IsBackground = true
             };
 
             starter.Start();

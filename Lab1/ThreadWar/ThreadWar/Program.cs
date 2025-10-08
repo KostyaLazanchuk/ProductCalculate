@@ -17,7 +17,6 @@ var view = new ConsoleView(gameState);
 view.ShowSplash();
 
 var engine = new GameEngine(gameState);
-
 var controller = new GameController(gameState, engine, view);
 
 engine.StartBackgroundSystems();
