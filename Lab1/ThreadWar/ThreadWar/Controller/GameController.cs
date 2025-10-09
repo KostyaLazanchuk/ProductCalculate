@@ -43,7 +43,7 @@ namespace ThreadWar.Controller
         private void HandleInput()
         {
             if (!Console.KeyAvailable) return;
-            var key = Console.ReadKey(true).Key;
+            var key = Console.ReadKey(true).Key; 
             if (!_gameState.StartEvent.IsSet) _gameState.StartEvent.Set();
 
 
