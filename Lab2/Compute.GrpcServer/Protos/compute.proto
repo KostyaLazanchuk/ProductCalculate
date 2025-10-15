@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+option csharp_namespace = "Compute.Rpc";
+
+service ComputeService {
+  rpc Compute (ComputeRequest) returns (ComputeResponse);
+}
+
+message ComputeRequest {
+  double x = 1;
+  int32 delayMs = 2;
+}
+
+message ComputeResponse {
+  string requestId = 1;
+  double x = 2;
+  double result = 3;
+  int32 threadId = 4;
+  int64 elapsedMs = 5;
+  int64 atUnixMs = 6;
+}
