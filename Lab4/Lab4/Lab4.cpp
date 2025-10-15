@@ -36,7 +36,6 @@ int main(int argc, char* argv[]) {
     int has_variant2 = 0;
     int workstation = -1;
     const char* surname = NULL;
-
     if (argc >= 3) {
         char* endptr = NULL;
         long ws = strtol(argv[1], &endptr, 10);
@@ -48,7 +47,6 @@ int main(int argc, char* argv[]) {
     }
 
     MPI_Barrier(MPI_COMM_WORLD);
-
     if (has_variant2) {
         if (rank == workstation) {
             printf("[rank=%d] Variant2: %s\n", rank, surname);
@@ -60,11 +58,10 @@ int main(int argc, char* argv[]) {
     }
     else {
         if (rank == 0) {
-            puts("[info] Variant2 skipped: pass <workstation> <surname> as arguments to enable it.");
+            puts("[info] Variant2 skipped");
             fflush(stdout);
         }
     }
-
     MPI_Finalize();
     return 0;
 }
