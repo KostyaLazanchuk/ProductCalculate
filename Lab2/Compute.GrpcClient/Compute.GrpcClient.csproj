@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos/compute.proto" GrcpServices = "Client" />
+		<Protobuf Include="Protos/compute.proto" GrcpServices="Server" />
 	</ItemGroup>
 
 
